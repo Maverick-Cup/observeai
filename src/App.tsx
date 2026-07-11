@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./hooks/useTheme";
 import { AuthProvider } from "./hooks/useAuth";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import { AppShell } from "./components/layout/AppShell";
+//import { AppShell } from "./components/layout/AppShell";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import BadAnswers from "./pages/BadAnswers";
@@ -25,11 +25,7 @@ import IntegrationsPage from "./pages/Integrations";
 
 /** Wraps a page component inside the authenticated AppShell. */
 function ProtectedPage({ children }: { children: React.ReactNode }) {
-  return (
-    <ProtectedRoute>
-      <AppShell>{children}</AppShell>
-    </ProtectedRoute>
-  );
+  return <ProtectedRoute>{children}</ProtectedRoute>;
 }
 
 export default function App() {

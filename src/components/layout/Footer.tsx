@@ -21,7 +21,7 @@ export function Footer({ className = "" }: { className?: string }) {
             Harshit Pratap Shahi
             <ExternalLink className="w-3 h-3 opacity-0 -ml-0.5 group-hover:opacity-60 transition-opacity" />
           </a>
-          <span className="hidden sm:inline">— Built with</span>
+          <span className="hidden sm:inline">— Forsee with</span>
           <span className="hidden sm:inline font-semibold text-foreground/60">ObserveAI</span>
           <Heart className="w-3 h-3 text-destructive/60 ml-0.5" />
         </p>
@@ -34,7 +34,7 @@ export function Footer({ className = "" }: { className?: string }) {
           className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors group"
         >
           <Lightbulb className="w-3.5 h-3.5 text-warning group-hover:text-warning/80 transition-colors" />
-          <span>Share feedback &amp; ideas</span>
+          <span>Feedback &amp; ideas</span>
           <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
         </a>
       </div>
