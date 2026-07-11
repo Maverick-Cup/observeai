@@ -1,0 +1,66 @@
+/**
+ * Mock integration data for demo / settings page.
+ */
+
+import { type WebhookIntegration } from "../../types/webhooks";
+
+export const MOCK_INTEGRATIONS: WebhookIntegration[] = [
+  {
+    id: "int-dt-001",
+    name: "Production Dynatrace",
+    provider: "dynatrace",
+    endpointUrl: "https://abc123.live.dynatrace.com/api/v2/events",
+    apiKey: "dt-api-••••••••••",
+    isActive: true,
+    eventFilters: ["trace.blocked", "alert.triggered", "guardrail.block"],
+    createdAt: Date.now() - 86400000 * 30,
+    lastSentAt: Date.now() - 600000,
+    lastErrorAt: undefined,
+    totalSent: 1247,
+    totalErrors: 3,
+  },
+  {
+    id: "int-sp-001",
+    name: "Splunk HEC (Staging)",
+    provider: "splunk",
+    endpointUrl: "https://hec-staging.example.com:8088/services/collector",
+    apiKey: "splunk-hec-••••••••••",
+    isActive: true,
+    eventFilters: ["trace.created", "trace.flagged", "alert.triggered", "guardrail.flag"],
+    createdAt: Date.now() - 86400000 * 14,
+    lastSentAt: Date.now() - 1800000,
+    lastErrorAt: Date.now() - 86400000 * 2,
+    lastErrorMessage: "HTTP 429 — rate limited",
+    totalSent: 892,
+    totalErrors: 12,
+  },
+  {
+    id: "int-dd-001",
+    name: "DataDog Ops",
+    provider: "datadog",
+    endpointUrl: "https://api.datadoghq.com/api/v1/events",
+    apiKey: "dd-api-••••••••••",
+    isActive: false,
+    eventFilters: ["trace.blocked", "guardrail.block", "guardrail.flag"],
+    createdAt: Date.now() - 86400000 * 7,
+    lastSentAt: Date.now() - 86400000 * 3,
+    lastErrorAt: undefined,
+    totalSent: 456,
+    totalErrors: 0,
+  },
+  {
+    id: "int-nr-001",
+    name: "New Relic Dev",
+    provider: "newrelic",
+    endpointUrl: "https://insights-collector.newrelic.com/v1/accounts/123456/events",
+    apiKey: "nr-api-••••••••••",
+    isActive: true,
+    eventFilters: ["trace.created", "trace.blocked", "alert.triggered", "guardrail.block", "alert.resolved"],
+    createdAt: Date.now() - 86400000 * 21,
+    lastSentAt: Date.now() - 7200000,
+    lastErrorAt: Date.now() - 86400000 * 5,
+    lastErrorMessage: "HTTP 401 — invalid API key",
+    totalSent: 2103,
+    totalErrors: 8,
+  },
+];
